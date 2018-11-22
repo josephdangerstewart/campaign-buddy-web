@@ -1,0 +1,11 @@
+{
+	"name": "string",
+	"count": "number",
+	"description": "string",
+	"vars": [
+		{
+			"name": "string",
+			"value": "any"
+		}
+	]
+}

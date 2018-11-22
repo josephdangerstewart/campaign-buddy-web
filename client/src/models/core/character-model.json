@@ -1,0 +1,12 @@
+{
+	"name": "string: 'Trogdor': required",
+	"playerName": "string: 'Billy': required",
+	"level": "number: 0: required",
+	"isNPC": "boolean: false: required",
+	"attributes": [
+		"from: attribute-model"
+	],
+	"items": [
+		"from: items-model"
+	]
+}

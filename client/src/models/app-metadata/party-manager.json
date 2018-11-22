@@ -1,0 +1,8 @@
+{
+	"attribute": {
+		"getBonus": "function",
+		"page": "number",
+		"state": "boolean",
+		"backgroundUrl": "string"
+	}
+}

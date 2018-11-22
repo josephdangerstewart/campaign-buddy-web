@@ -1,0 +1,47 @@
+@import '../../../../styles/colors.less';
+@import '../../../../styles/fonts.less';
+
+:local {
+	.character-header-container {
+		padding: 10px;
+		display: flex;
+		vertical-align: top;
+
+		.character-icon {
+			position:relative;
+			display:inline-block;
+			vertical-align:top;
+			margin-right:10px;
+			user-select:none;
+			width:100px;
+			height:100px;
+			background-color: @dark-2;
+			border-radius: 25px;
+		}
+	
+		.character-info {
+			display: inline-block;
+			margin-left: 10px;
+
+			.name {
+				font-size: 22pt;
+				max-width: 150px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+	
+			.subtitle {
+				font-size: 16pt;
+				color: @white;
+				font-family: @body;
+
+				.value {
+					color: #AAA8A4;
+					font-family: "Roboto Condensed";
+					font-size: 16pt;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@import '../../styles/colors.less';
+
+:local {
+	.button {
+		background:none;
+		border: none;
+		display: inline-block;
+		background-color:#B05703;
+		border-radius:10px;
+		padding:5px;
+		padding-left:9px;
+		padding-right:9px;
+		cursor:pointer;
+		transition: padding .2s;
+		color: @white;
+		font-family: 'Roboto Condensed';
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		&-circle {
+			background:none;
+			border: none;
+			display: inline-block;
+			background-color:#B05703;
+			padding:5px 9px;
+			cursor:pointer;
+			transition: padding .2s;
+			border-radius:50%;
+			font-size:14pt;
+			transition: background-color .1s;
+			color: @white;
+			margin: 0 5px;
+
+			&:hover {
+				background-color: #A55103;
+			}
+
+			&:active {
+				background-color: #9D4E03;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&:active {
+			background-color: #9D4E03;
+		}
+	}
+
+	.icon-button {
+		height:25px;
+		width:25px;
+		font-size:12pt;
+		background:none;
+		color:#B1B1B1;
+		transition:color .2s;
+
+		&:hover {
+			background:none;
+			color: @white;
+		}
+
+		&:active {
+			color:#C5C5C5;
+		}
+
+		i {
+			text-align: center;
+		}
+	}
+}

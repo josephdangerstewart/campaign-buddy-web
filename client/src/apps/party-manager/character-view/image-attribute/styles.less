@@ -1,0 +1,31 @@
+@import '../../../../styles/colors.less';
+@import '../../../../styles/fonts.less';
+
+:local {
+	.svg-background {
+		display:inline-block;
+		width:80px;
+		position:relative;
+		margin-right:10px;
+		vertical-align:top;
+
+		&-content {
+			position:absolute;
+			left:50%;
+			top:55px;
+			transform:translate(-50%,-90%);
+
+			.number {
+				color: @white;
+				font-family: @body;
+				font-size: 18pt;
+			}
+		}
+
+		.attribute-name {
+			color: @white;
+			text-align: center;
+			font-size: 12pt;
+		}
+	}
+}

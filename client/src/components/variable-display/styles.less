@@ -1,0 +1,20 @@
+:local {
+	.container {
+		display: inline;
+		position: relative;
+
+		.value {
+			cursor: pointer;
+			z-index: 0;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&-empty {
+				color: rgba(170, 168, 164, 0.39);
+				font-style: italic;
+			}
+		}
+	}
+}

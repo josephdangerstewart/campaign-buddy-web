@@ -1,0 +1,49 @@
+@import '../../../../styles/colors.less';
+@import '../../../../styles/fonts.less';
+
+:local {
+	.chip {
+		background-color: @grey;
+		padding: 3px 12px;
+		border-radius: 25px;
+		font-family: @body;
+		color: @white;
+		font-size: 12pt;
+		display: flex;
+		align-items: center;
+		margin-right: 5px;
+
+		.icon {
+			margin-right: 5px;
+			color: @white;
+			font-size: 12pt;
+		}
+
+		.removeIcon {
+			font-size: 10pt;
+			padding: 0 10px;
+			width: 10px;
+		}
+
+		&-new {
+			border: dotted 4px @grey;
+			background-color: rgba(111, 116, 142, 0.281);
+			color: #5B5F75;
+			cursor: pointer;
+
+			&:hover {
+				background-color: rgba(111, 116, 142, 0.5);
+				color: #656A82;
+			}
+		}
+	}
+
+	.chipContainer {
+		position: relative;
+
+		.comboBoxContainer {
+			position: absolute;
+			z-index: 100;
+		}
+	}
+}

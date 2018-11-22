@@ -1,0 +1,55 @@
+@import '../../styles/colors.less';
+@import '../../styles/fonts.less';
+
+:local {
+	.data-list {
+		display: inline-block;
+		background-color: @dark-1;
+		width:200px;
+		height:300px;
+		margin: 0 10px;
+		overflow: hidden;
+		border-radius: 25px 25px 15px 15px;
+
+		&-header {
+			height: 15%;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			justify-content: center;
+			background-color: @dark-2;
+			
+			p {
+				color: @white;
+				font-size: 18pt;
+			}
+		}
+
+		&-body {
+			height: 85%;
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			&-element {
+				color: @white;
+				font-size: 14pt;
+				padding: 5px 10px;
+
+				&:nth-child(even) {
+					background-color: @dark-2;
+				}
+
+				&-interactive {
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline;
+					}
+
+					&:after {
+						content: ' *';
+					}
+				}
+			}
+		}
+	}
+}

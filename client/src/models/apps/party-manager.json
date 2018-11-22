@@ -1,0 +1,15 @@
+{
+	"!comment!": "Any changes to the party manager model should be made in here using CampaignBuddy Model Templating Markup",
+	"config": {
+		"selectMode": [
+			"!ONEOF!",
+			"string: 'select'",
+			"string: 'page'"
+		]
+	},
+	"data": {
+		"party": [
+			"from: character-model"
+		]
+	}
+}

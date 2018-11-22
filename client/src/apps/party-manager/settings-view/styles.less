@@ -1,0 +1,41 @@
+@import '../../../styles/fonts.less';
+@import '../../../styles/colors.less';
+
+:local {
+	.header {
+		color: @white;
+		font-family: @header;
+		font-size: 32pt;
+		margin-top: 5px 0 20px;
+		text-align: center;
+	}
+
+	.settings {
+		padding-left: 20px;
+
+		&-name {
+			color: @white;
+			font-family: @subheader;
+			font-size: 16pt;
+			margin-top: 5px 0;
+			vertical-align: center;
+		}
+	}
+
+	.dropdown {
+		position: absolute;
+		&-selected {
+			display: inline-block;
+			position: relative;
+			width: 100px;
+			padding: 5px;
+			border-radius: 25px;
+			color: @black;
+			border: solid 2px @black;
+			background-color: @white;
+			@font-family: @body;
+			font-size: 12pt;
+			cursor: pointer;
+		}
+	}
+}

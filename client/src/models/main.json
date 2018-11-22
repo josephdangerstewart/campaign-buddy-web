@@ -1,0 +1,9 @@
+{
+	"modelVersion": "constant: 1.0",
+	"config": {
+		"gameSystem": "string: ''"
+	},
+	"apps": {
+		"partyManager": "from: apps|party-manager"
+	}
+}

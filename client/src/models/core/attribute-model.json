@@ -1,0 +1,13 @@
+{
+	"name": "string",
+	"value": "any",
+	"description": "string",
+	"vars": [
+		{
+			"name": "string",
+			"value": "any"
+		}
+	],
+	"type": "string",
+	"category": "string"
+}

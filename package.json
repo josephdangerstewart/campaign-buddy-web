@@ -1,0 +1,42 @@
+{
+  "name": "campaign-buddy",
+  "version": "1.0.0",
+  "description": "A real time assistant for people wishing to DM campaigns",
+  "main": "server.js",
+  "scripts": {
+    "start": "webpack --mode=development && webpack --config webpack.client.js --mode=development && node server.bundle.js"
+  },
+  "author": "Joseph Stewart",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "css-loader": "^1.0.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "file-loader": "^2.0.0",
+    "googleapis": "^24.0.0",
+    "image-webpack-loader": "^4.5.0",
+    "keyboardjs": "^2.5.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-fontawesome": "^1.6.1",
+    "react-inlinesvg": "^0.8.2",
+    "react-router-dom": "^4.3.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.26.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
+}

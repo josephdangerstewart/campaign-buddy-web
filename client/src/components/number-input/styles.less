@@ -1,0 +1,28 @@
+:local {
+	.container {
+		background: #3D404E;
+		display: inline-block;
+		padding: 2px 10px;
+		border-radius: 25px;
+		display: flex;
+		align-items: center;
+
+		.input {
+			background-color: #D8D8D8;
+			width: 60px;
+			border: none;
+			padding: 5px 10px;
+			font-family: "Roboto Condensed";
+			color: #1F2027;
+			font-size: 12pt;
+			
+			&:focus {
+				outline: none;
+			}
+
+			&.error {
+				color: #9B1D20;
+			}
+		}
+	}
+}
