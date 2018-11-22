@@ -44,9 +44,9 @@ const listFiles = (user, response) => {
 
 		const files = data.files;
 		if (files.length) {
-			return response.json({status: 200, files});
+			return response.json({ status: 200, files });
 		} else {
-			return response.json({status: 200, files: []});
+			return response.json({ status: 200, files: [] });
 		}
 	});
 }
