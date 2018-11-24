@@ -146,6 +146,7 @@ export default class App extends React.Component {
 				<SaveIndicator
 					state={saveState}
 				/>
+				<div id="react-portal"></div>
 			</div>
 		)
 	}

@@ -5,6 +5,10 @@ import PopupControl from '../../../../components/popup-control';
 import styles from './styles.less';
 
 export default class Chip extends React.Component {
+	state = {
+		newChipRef: null,
+	}
+	
 	newClicked = () => {
 		if (this.popup) {
 			this.popup.show();
@@ -14,6 +18,23 @@ export default class Chip extends React.Component {
 	makeNew = (index) => {
 		const { options, onNew } = this.props;
 		onNew(options[index]);
+	}
+
+	getAnchorPoint = ref => {
+		const { newChipRef } = this.state;
+		console.log('Calling getAnchorPoint');
+		if (!newChipRef && ref) {
+			console.log('Setting new anchor point');
+			console.log(ref);
+			this.setState({
+				newChipRef: ref
+			});
+		} else if (!ref) {
+			console.log('Clearning anchor');
+			this.setState({
+				newChipRef: null
+			})
+		}
 	}
 	
 	render() {
@@ -25,12 +46,14 @@ export default class Chip extends React.Component {
 			options,
 		} = this.props;
 
+		const { newChipRef } = this.state;
+
 		if (isAddNew && options && options.length > 0) {
 			return (
 				<div className={styles.chipContainer}>
-					<span onClick={this.newClicked} className={`${styles.chip} ${styles.chipNew}`}><i className="fa fa-plus"></i></span>
+					<span ref={this.getAnchorPoint} onClick={this.newClicked} className={`${styles.chip} ${styles.chipNew}`}><i className="fa fa-plus"></i></span>
 					{
-						<PopupControl ref={(ref) => (this.popup=ref)}>
+						<PopupControl anchor={newChipRef} ref={(ref) => (this.popup=ref)}>
 							<ComboBox
 								width={150}
 								options={options}

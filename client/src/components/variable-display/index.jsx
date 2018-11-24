@@ -14,6 +14,10 @@ export default class VariableDisplay extends React.Component {
 		'number': NumberInput
 	}
 
+	state = {
+		anchorRef: null,
+	}
+
 	handleClick = () => {
 		if (this.popup) this.popup.show();
 	}
@@ -22,6 +26,20 @@ export default class VariableDisplay extends React.Component {
 		const { onChange } = this.props;
 		if (this.popup) this.popup.hide();
 		onChange(value);
+	}
+
+	getAnchorRef = ref => {
+		const { anchorRef } = this.state;
+		if (!anchorRef && ref) {
+			this.setState({
+				anchorRef: ref
+			});
+		}
+		else if (!ref) {
+			this.setState({
+				anchorRef: null
+			});
+		}
 	}
 
 	render() {
@@ -33,14 +51,22 @@ export default class VariableDisplay extends React.Component {
 			...rest
 		} = this.props;
 
+		const { anchorRef } = this.state;
+
 		let Control = this.controls[control];
 		if (!Control) Control = this.controls.input;
 		const isEmptyString = typeof value === 'string' && value.trim() === '';
 
 		return (
 			<div className={styles.container}>
-				<span onClick={this.handleClick} className={`${valueClass} ${styles.value} ${isEmptyString ? styles.valueEmptry : ''}`}>{isEmptyString ? 'NA' : typeof value === 'object' ? '' : value}</span>
-				<PopupControl ref={ref => (this.popup = ref)}>
+				<span
+					onClick={this.handleClick}
+					className={`${valueClass} ${styles.value} ${isEmptyString ? styles.valueEmptry : ''}`}
+					ref={this.getAnchorRef}
+				>
+					{isEmptyString ? 'NA' : typeof value === 'object' ? '' : value}
+				</span>
+				<PopupControl ref={ref => (this.popup = ref)} anchor={anchorRef}>
 					<Control
 						{...rest}
 						giveValueOnEnter

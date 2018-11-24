@@ -34,7 +34,11 @@ export default class NumberInput extends React.Component {
 	}
 
 	handleChange = (value) => {
-		const { giveValueOnEnter, canAcceptNaN, onChange } = this.props;
+		const { giveValueOnEnter, canAcceptNaN, onChange, onInputValueChanged } = this.props;
+
+		if (onInputValueChanged) {
+			onInputValueChanged(value);
+		}
 
 		if (giveValueOnEnter && (!isNaN(value) || canAcceptNaN || value === '-')) {
 			this.setState({ value });
