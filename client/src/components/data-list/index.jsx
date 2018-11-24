@@ -21,10 +21,14 @@ export default class DataList extends React.Component {
 			data,
 			title,
 			containerClass,
+			height,
+			width,
 		} = this.props;
 
+		const inlineStyle = { width, height };
+
 		return (
-			<div className={`${containerClass} ${styles.dataList}`}>
+			<div className={`${containerClass} ${styles.dataList}`} style={inlineStyle}>
 				<div className={styles.dataListHeader}>
 					<p>{title}</p>
 				</div>

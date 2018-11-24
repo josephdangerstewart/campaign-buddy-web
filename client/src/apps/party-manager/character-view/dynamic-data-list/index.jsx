@@ -36,24 +36,19 @@ export default class DynamicDataList extends React.Component {
 			data,
 			title,
 			onAdd,
-			width,
-			height,
 		} = this.props;
 
 		const { removing } = this.state;
-		let style = {}
-		if (width) style.width = width;
 
 		return (
 			<div className={styles.container}>
 				<DataList
 					data={data.map(this.mapData)}
 					title={title}
-					width={width}
-					height={height}
+					height="100%"
 					elementClass={removing ? styles.removing : null}
 				/>
-				<div className={styles.buttons} style={style}>
+				<div className={styles.buttons}>
 					<Button
 						icon="plus"
 						onClick={onAdd}

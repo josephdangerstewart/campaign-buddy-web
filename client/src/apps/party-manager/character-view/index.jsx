@@ -57,34 +57,36 @@ export default class PartyMemberView extends React.Component {
 		character.load();
 
 		return (
-			<div className={`h100 ${styles.wrapper}`}>
-				<div className={`${styles.row} ${styles.rowHeader}`}>
-					<CharacterHeaderCard
-						character={character}
-						headerAttributes={headerAttributes}
-						onAttributeChange={this.onAttributeChange}
-						update={update}
-					/>
-					{
-						statAttributes.length > 0 ?
-							<div className={styles.statsBarWrapper}>
-								<div className={styles.statsBar}>
-									{statAttributes.map(this.mapStatAttributes)}
+			<div className={`h100 ${styles.container}`}>
+				<div className={styles.wrapper}>
+					<div className={`${styles.row} ${styles.rowHeader}`}>
+						<CharacterHeaderCard
+							character={character}
+							headerAttributes={headerAttributes}
+							onAttributeChange={this.onAttributeChange}
+							update={update}
+						/>
+						{
+							statAttributes.length > 0 ?
+								<div className={styles.statsBarWrapper}>
+									<div className={styles.statsBar}>
+										{statAttributes.map(this.mapStatAttributes)}
+									</div>
 								</div>
-							</div>
-						:
-							null
-					}
+								:
+								null
+						}
+					</div>
+					<Page
+						rowClass={styles.row}
+						character={character}
+						update={update}
+						onAttributeChange={this.onAttributeChange}
+						searchAttributeInGroup={searchAttributeInGroup}
+						overlay={overlay}
+					/>
 				</div>
-				<Page
-					rowClass={styles.row}
-					character={character}
-					update={update}
-					onAttributeChange={this.onAttributeChange}
-					searchAttributeInGroup={searchAttributeInGroup}
-					overlay={overlay}
-				/>
-				<PageControl 
+				<PageControl
 					pageCount={2}
 					page={page}
 					onPageChange={(i) => this.setState({ page: i })}
