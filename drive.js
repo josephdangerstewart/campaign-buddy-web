@@ -4,6 +4,8 @@ var google = require('googleapis');
 var stream = require('stream');
 const OAuth2 = google.auth.OAuth2;
 
+const DEFAULT_SYSTEM = 'Test';
+
 var oauth2Client = new OAuth2(
 	authConfig.googleAuth.clientID,
 	authConfig.googleAuth.clientSecret,
@@ -94,6 +96,7 @@ const createCampaign = (request, response) => {
 	}
 
 	let { name, system } = request.query;
+	if (!system) system === DEFAULT_SYSTEM;
 
 	var fileMetadata = {
 		'name': name,

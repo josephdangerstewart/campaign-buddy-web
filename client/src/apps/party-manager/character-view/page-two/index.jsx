@@ -6,13 +6,11 @@ import styles from './styles.less';
 
 export default class PageTwo extends React.Component {
 	onAddAttributeToGroup = (group) => {
-		const { searchAttributeInGroup, overlay } = this.props;
-		console.log(`Searching through ${group}`);
-		searchAttributeInGroup(group, '').then(result => {
+		const { searchAttributeInGroup, overlay, character } = this.props;
+		searchAttributeInGroup(group, '', character).then(result => {
 			overlay.show(SearchModal, {
 				options: result,
 				onChange: (index, value) => {
-					console.log(value);
 					this.addAttributeInGroup(value.name || value, value, value.type, value.category, group)
 				},
 			})

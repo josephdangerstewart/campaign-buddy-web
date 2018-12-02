@@ -68,7 +68,8 @@ export default class GameController {
 		const me = this;
 		for (let key in appComponents) {
 			this.apps[appComponents[key].appName] = this.rawModel.apps[appComponents[key].appName];
-			appComponents[key].init(this.apps[appComponents[key].appName], me);
+			if (appComponents[key].init)
+				appComponents[key].init(this.apps[appComponents[key].appName], me);
 		}
 	}
 
@@ -80,7 +81,10 @@ export default class GameController {
 		const appData = {};
 
 		for (let key in appComponents) {
-			appData[appComponents[key].appName] = appComponents[key].toModel(this.getApp(appComponents[key].appName));
+			if (appComponents[key].toModel)
+				appData[appComponents[key].appName] = appComponents[key].toModel(this.getApp(appComponents[key].appName));
+			else
+				appData[appComponents[key].appName] = this.getApp(appComponents[key].appName);
 		}
 
 		return {
@@ -121,7 +125,7 @@ export default class GameController {
 		return Object.keys(this.attributeGroups);
 	}
 
-	searchAttributeInGroup = (group, search) => {
+	searchAttributeInGroup = (group, search, character) => {
 		if (!this.attributeGroups[group]) return [];
 		const rVal = [];
 
@@ -138,7 +142,7 @@ export default class GameController {
 			const typeClass = this.attributeTypeRegistry[type];
 
 			if (typeClass.group !== group || !typeClass.search) continue;
-			promiseList.push(typeClass.search(search));
+			promiseList.push(typeClass.search(search, character));
 		}
 
 		return Promise.all(promiseList).then(results => {

@@ -41,7 +41,7 @@ export default class Button extends React.Component {
 					icon ?
 						<i className={`fa fa-${icon}`}></i>
 					:
-						{children}
+						children
 				}
 			</button>
 		)

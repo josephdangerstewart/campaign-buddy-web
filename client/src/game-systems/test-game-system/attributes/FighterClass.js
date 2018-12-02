@@ -14,15 +14,21 @@ export default class FighterClass extends Attribute {
 	}
 
 	static getAttributeFromData(name, value, vars) {
-		return new FighterClass(name, value, vars, 'This is a description!!', 'group-Feature');
+		console.log('Calling get attribute from data');
+		const att = new FighterClass(name, value, vars, 'This is a description!!', 'group-Features');
+		return att;
 	}
 	
-	static search(val) {
+	static search(val, character) {
+		console.log(character);
 		return [
-			'A Fighter Type Attribute!',
+			{
+				name: 'A Fighter Type Attribute!',
+				type: 'fighter_class',
+			},
 			{
 				name: 'Another fighter type attribute',
-				id: 'Some id!',
+				type: 'fighter_class'
 			}
 		]
 	}

@@ -1,9 +1,10 @@
 {
-	"modelVersion": "constant: 1.0",
+	"modelVersion": "constant: 1.1",
 	"config": {
 		"gameSystem": "string: ''"
 	},
 	"apps": {
-		"partyManager": "from: apps|party-manager"
+		"partyManager": "from: apps|party-manager",
+		"diceRoller": "from: apps|dice-roller"
 	}
 }

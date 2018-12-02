@@ -84,7 +84,7 @@ export default class StatBox extends React.Component {
 					<NumberInput
 						giveValueOnEnter
 						onChange={(val) => this.onChange(attributeName, val)}
-						onInputValueChanged={inputValue => this.setState({ inputValue }, () => console.log(this.state.inputValue))}
+						onInputValueChanged={inputValue => this.setState({ inputValue })}
 						defaultValue={rawValue}
 					/>
 				</PopupControl>

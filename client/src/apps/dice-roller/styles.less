@@ -1,0 +1,42 @@
+:local {
+	.svg-wrapper {
+		max-width: 300px;
+		width: 100%;
+		position: relative;
+	}
+
+	.grid {
+		display: flex;
+		height: 100%;
+
+		.column {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			
+			&-grow {
+				display: flex;
+				justify-content: center;
+				flex-grow: 1;
+				align-items: center;
+				flex-direction: column;
+			}
+		}
+	}
+
+	.button-text {
+		font-size: 24pt;
+	}
+
+	.text {
+		font-size: 20pt;
+	}
+
+	.svg-overlay {
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+		font-size: 22pt;
+	}
+}

@@ -31,6 +31,18 @@ export default class Input extends React.Component {
 		}
 	}
 
+	handleGiveValueOnEnterChange = event => {
+		const { onInputValueChanged } = this.props;
+
+		if (onInputValueChanged) {
+			onInputValueChanged(event.target.value);
+		}
+
+		this.setState({
+			value: event.target.value
+		});
+	}
+
 	render() {
 		const { onChange, placeholder, width, value, giveValueOnEnter, padding, fontSize } = this.props;
 		const { value: valueFromState } = this.state;
@@ -47,7 +59,7 @@ export default class Input extends React.Component {
 		return (
 			<input
 				className={styles.input}
-				onChange={giveValueOnEnter ? ((e) => this.setState({ value: e.target.value })) : ((e) => onChange(e.target.value))}
+				onChange={giveValueOnEnter ? this.handleGiveValueOnEnterChange : ((e) => onChange(e.target.value))}
 				placeholder={placeholder}
 				style={style}
 				value={giveValueOnEnter ? valueFromState : value}

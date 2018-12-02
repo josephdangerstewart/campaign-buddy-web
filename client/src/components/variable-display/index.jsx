@@ -16,6 +16,7 @@ export default class VariableDisplay extends React.Component {
 
 	state = {
 		anchorRef: null,
+		inputValue: null,
 	}
 
 	handleClick = () => {
@@ -39,6 +40,14 @@ export default class VariableDisplay extends React.Component {
 			this.setState({
 				anchorRef: null
 			});
+		}
+	}
+
+	onClickAway = () => {
+		const { onChange } = this.props;
+		const { inputValue } = this.state;
+		if (inputValue !== null) {
+			onChange(inputValue);
 		}
 	}
 
@@ -66,11 +75,16 @@ export default class VariableDisplay extends React.Component {
 				>
 					{isEmptyString ? 'NA' : typeof value === 'object' ? '' : value}
 				</span>
-				<PopupControl ref={ref => (this.popup = ref)} anchor={anchorRef}>
+				<PopupControl 
+					onClose={this.onClickAway}
+					ref={ref => (this.popup = ref)}
+					anchor={anchorRef}
+				>
 					<Control
 						{...rest}
 						giveValueOnEnter
 						onChange={this.handleChange}
+						onInputValueChanged={inputValue => this.setState({ inputValue })}
 					/>
 				</PopupControl>
 			</div>

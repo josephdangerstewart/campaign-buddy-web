@@ -22,15 +22,11 @@ export default class Chip extends React.Component {
 
 	getAnchorPoint = ref => {
 		const { newChipRef } = this.state;
-		console.log('Calling getAnchorPoint');
 		if (!newChipRef && ref) {
-			console.log('Setting new anchor point');
-			console.log(ref);
 			this.setState({
 				newChipRef: ref
 			});
 		} else if (!ref) {
-			console.log('Clearning anchor');
 			this.setState({
 				newChipRef: null
 			})
